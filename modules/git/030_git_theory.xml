@@ -4,7 +4,7 @@
 	and the Linux kernel developers where no longer able to use it for free.</para>
 	<para><command>git</command> quickly became popular and is now the most widely used <command>distributed version control</command> system in the world.</para>
 	<para>Geek and Poke demonstrates why we need version control (image property of Geek and Poke CCA 3.0).</para>
- 	<para><mediaobject><imageobject><imagedata fileref="images/version_control.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+ 	<para><mediaobject><imageobject><imagedata fileref="../images/version_control.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 	<!--NOT REALLY SURE WHAT TO DO WITH THIS LINE ?<para>Besides <command>source code</command> for software, you can also find German and Icelandic <command>law</command> on github (and probably much more by the time you are reading this).</para> -->
 </section>
 <?hard-pagebreak?>
@@ -74,6 +74,7 @@ The file is the same configuration file as in  <command>~/.gitconfig</command>, 
 	In simple terms, git workflow attempts to insulate code bases and prevent problems before they happen.  
 	Our local repository consists of three "trees" maintained by git. The first one is your <command>Working Directory</command> of our project,
 	which holds the actual files. The second one is the <command>Index</command> which acts as a staging area and finally the <command>HEAD</command> which points to the last commit you've made.
+    <mediaobject><imageobject><imagedata fileref="../images/git_basic_flow.png" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 
 	</para>
 </section>
@@ -228,25 +229,55 @@ paul@debian10~/project42$ git branch
 </section>
 <section><title>to be continued...</title>
 	<para>The <command>git</command> story is not finished.</para>
-	<para>There are many excellent online tutorials for <command>git</command>. This list can save you one Google query:</para>
+	<para>There are many excellent online tutorials for <command>git</command>. <!-- THIS IS A REPETITION: DO WE NEED IT ? This list can save you one Google query:</para>
 	<screen>http://gitimmersion.com/
 http://git-scm.com/book</screen>
 </section>
+-->
 
 
 
 
 <?hard-pagebreak?>
-<section><title>github.com</title>
-	<para>Create an account on <command>github.com</command><indexterm><primary>github</primary></indexterm>. This website is a frontend for an immense git server with over two and a half million users and almost five million projects (including Fedora, Linux kernel, Android, Ruby on Rails, Wine, X.org, VLC...)</para>
-	<screen>https://github.com/signup/free</screen>
-	<para>This account is free of charge, we will use it in the examples below.</para>
+<section><title>remote server</title>
+	<para>As mentioned since the beginning of this chapter, we need a remote server so we could save our project changes an even for more future development needs.
+	 We have chosen the <command>gitlab.com</command> for this purpose, yet it needs to be said that there many other options, worth checking out.</para>
+	<para>We start by creating an account on <command>gitlab.com</command><indexterm><primary>gitlab</primary></indexterm>.
+	 This website is a frontend for an immense git server with lots of Open and Closed projects in various programming languages and documentaion.</para>
+	<screen>https://gitlab.com/users/sign_in</screen>
+	<para>Gitlab accounts are free of charge as of now, and besides they provide selfhosted version which is fully opensource. we will be using it in our examples below.</para>
 </section>
-<section><title>add your public key to github</title>
-	<para>I prefer to use github with a <command>public key</command><indexterm><primary>public key</primary></indexterm>, so it probably is a good idea that you also upload your public key to github.com.</para>
-	<para><mediaobject><imageobject><imagedata fileref="images/github_pubkey.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+<section><title>public key authentication with gitlab</title>
+	<para>Usually when even you have set the account with git config command, the method of your athentication is via https protocol, with the username and password that you have setup when you signed in to the gitlab site. </para>
+	<para>Due to hassel, we prefer to setup passwordless <command>ssh public key</command><indexterm><primary>ssh public key</primary></indexterm>, and to push or pull changes of our project on <command>gitlab.com</command> .</para>
+	<para>here is an example of ssh key generaion:</para>
+	<screen>paul@debian10~/project42$ ssh-keygen -t rsa -b 4096
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/paul/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in id_rsa.
+Your public key has been saved in id_rsa.pub.
+The key fingerprint is:
+SHA256:tbXg05GTOAd2CbsZc20NYQlzAzfNj63DVpct5vuD+Q4 paul.cobbot@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|          +.=+O= |
+|         . =.O.=o|
+|          O O oo=|
+|         o & =+.*|
+|        S * o+ +.|
+|           .  *  |
+|             Eoo |
+|             oo. |
+|              o+o|
++----[SHA256]-----+
+paul@debian10~/project42$</screen>
+	<para>Once the file is created, it is usually saved at <command>.ssh</command>folder at your users home directory.
+	 You can copy the the content of yout public key (id_rsa.pub) to your gitlab account settings</para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/github_pubkey.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 	<para>You can upload your own key via the web interface:</para>
-	<screen>https://github.com/settings/ssh</screen>
+	<screen>https://gitlab.com/settings/ssh</screen>
 	<para>Please do not forget to protect your <command>private key</command>!</para>
 </section>
 

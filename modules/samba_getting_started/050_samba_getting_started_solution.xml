@@ -33,6 +33,6 @@
 	<screen>The computer that won the elections.</screen>
 	<screen>This machine will make the list of computers in the network</screen>
 	<para>13. If time permits (or if you are waiting for other students to finish this practice), then install a sniffer (wireshark) and watch the browser elections.</para>
-	<screen>On ubuntu: sudo aptitude install wireshark</screen>
+	<screen>On ubuntu: sudo apt install wireshark</screen>
 	<screen>then: sudo wireshark, select interface</screen>
 </section>

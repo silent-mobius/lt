@@ -279,7 +279,7 @@ root@server42:~#</screen>
 <?hard-pagebreak?>
 <section><title>Debian package management</title>
 <para>To get all information about the newest packages form the online repository:</para>
-<screen>root@server42:~# <command>aptitude update</command>
+<screen>root@server42:~# <command>apt update</command>
 Get: 1 http://ftp.be.debian.org jessie InRelease [191 kB]
 Get: 2 http://security.debian.org jessie/updates InRelease [84.1 kB]
 Get: 3 http://ftp.be.debian.org jessie-updates InRelease [117 kB]
@@ -288,7 +288,7 @@ Get: 5 http://security.debian.org jessie/updates/main Sources [14 B]
 Get: 6 http://ftp.be.debian.org jessie/main Sources/DiffIndex [7,876 B]
 ... (output truncated)</screen>
 <para>To download and apply all updates for all installed packages:</para>
-<screen>root@server42:~# <command>aptitude upgrade</command>
+<screen>root@server42:~# <command>apt upgrade</command>
 Resolving dependencies...
 The following NEW packages will be installed:
   firmware-linux-free{a} irqbalance{a} libnuma1{a} linux-image-3.16.0-4-amd64{a}
@@ -300,7 +300,7 @@ Need to get 44.9 MB of archives. After unpacking 161 MB will be used.
 Do you want to continue? [Y/n/?]
 ... (output truncated)</screen>
 <para>To install new software (<command>vim</command> and <command>tmux</command> in this example):</para>
-<screen>root@server42:~# <command>aptitude install vim tmux</command>
+<screen>root@server42:~# <command>apt install vim tmux</command>
 The following NEW packages will be installed:
   tmux vim vim-runtime{a}
 0 packages upgraded, 3 newly installed, 0 to remove and 0 not upgraded.

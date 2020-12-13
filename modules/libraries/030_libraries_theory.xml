@@ -53,8 +53,8 @@ e2fslibs: /lib/libext2fs.so.2.4</screen>
 /usr/share/doc/e2fslibs/copyright                                         OK
 /lib/libe2p.so.2.3                                                        OK
 /lib/libext2fs.so.2.4                                                     OK</screen>
-	<para>Should a library be broken, then reinstall it with <command>aptitude reinstall $package</command><indexterm><primary>aptitude</primary></indexterm>.</para>
-	<screen>root@deb106:~# aptitude reinstall e2fslibs
+	<para>Should a library be broken, then reinstall it with <command>apt reinstall $package</command><indexterm><primary>apt</primary></indexterm>.</para>
+	<screen>root@deb106:~# apt reinstall e2fslibs
 Reading package lists... Done
 Building dependency tree       
 Reading state information... Done

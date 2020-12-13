@@ -1,7 +1,7 @@
 <?hard-pagebreak?>
 <section><title>installing squid</title>
-<para>This screenshot shows how to install squid on Debian with <command>aptitude</command>. Use <command>yum</command> if you are on Red Hat/CentOS.</para>
-<screen>root@debian10:~# <command>aptitude install squid</command>
+<para>This screenshot shows how to install squid on Debian with <command>apt</command>. Use <command>yum</command> if you are on Red Hat/CentOS.</para>
+<screen>root@debian10:~# <command>apt install squid</command>
 The following NEW packages will be installed:
   squid squid-common{a} squid-langpack{a}
 0 packages upgraded, 3 newly installed, 0 to remove and 0 not upgraded.
@@ -53,7 +53,7 @@ root@debian10:~#</screen>
 <para>A proxy server sits inbetween your browser and the internet. So besides caching of internet data (the original function of a proxy server) and besides firewall like restrictions based on www content, a proxy server is in the perfect position to alter the webpages that you visit.</para>
 <para>You could for instance change the advertising on a webpage (or remove certain advertisers), or like we do in this example; change all images so they are upside down.</para>
 <para>The server needs command line tools to manipulate images and a perl script that uses these tools (and <command>wget</command> to download the images locally and serve them with <command>apache2</command>). In this example we use <command>imagemagick</command> (which provides tools like <command>convert</command> and <command>mogrify</command>).</para>
-<screen>root@debian10:~# <command>aptitude install imagemagick wget perl apache2</command>
+<screen>root@debian10:~# <command>apt install imagemagick wget perl apache2</command>
 ...output truncated...
 root@debian10:~# <command>dpkg -S $(readlink -f $(which mogrify))</command>
 imagemagick: /usr/bin/mogrify.im6

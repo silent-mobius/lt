@@ -412,9 +412,9 @@ ns1             IN      A       10.104.33.30
 <?hard-pagebreak?>
 <section><title>example: caching only DNS server</title>
 	<para>1. installing DNS software on Debian</para>
-	<screen>root@debian10:~# <command>aptitude update &#038;&#038; aptitude upgrade</command>
+	<screen>root@debian10:~# <command>apt update &#038;&#038; apt upgrade</command>
 ...
-root@debian10:~# <command>aptitude install bind9</command>
+root@debian10:~# <command>apt install bind9</command>
 ...
 root@debian10:~# <command>dpkg -l | grep bind9 | tr -s ' '</command>
 ii bind9 1:9.8.4.dfsg.P1-6+nmu2+deb7u2 amd64 Internet Domain Name Server

@@ -1,4 +1,11 @@
-<para>This chapter is an introduction to using <command>git</command> on the command line. The <command>git repository</command> is hosted by <command>github</command>, but you are free to choose another server (or create your own).</para>
-<para>There are many excellent online tutorials for <command>git</command>. This list can save you one Google query:</para>
-<screen>http://gitimmersion.com/
+<para>In this chapter, we are going to be introduced to <command>git</command> command line tool. <command>Git</command> is a distributed version-control 
+system for tracking changes in any set of files, originally designed for coordinating work among programmers cooperating on source code during software development.
+ Its goals include speed, data integrity, and support for distributed, non-linear workflows. Git uses remote server or remote hosted repository to save and keep up
+ with the changes of the software developement.
+The <command>git repository</command> which wewill be using will be hosted by <command>gitlab</command>, but you are free to choose another git service provider( github, bitbucket, gitea)
+ or create your own with git binary.</para>
+<para>Regarding where to find the information about git binaries or others ? There are many excellent online tutorials for <command>git</command>, and We suggest to go over them, for additional information.
+Here is a list of links, that can save you one Google query:</para>
+<screen>https://rogerdudler.github.io/git-guide/
+http://gitimmersion.com/
 http://git-scm.com/book</screen>

@@ -1,7 +1,7 @@
 <?hard-pagebreak?>
 <section><title>installing mysql</title>
-	<para>On Debian/Ubuntu you can use <command>aptitude install mysql-server</command><indexterm><primary>aptitude(8)</primary></indexterm> to install the <command>mysql server</command><indexterm><primary>mysql-server</primary></indexterm> and <command>client</command><indexterm><primary>mysql-client</primary></indexterm>.</para>
-	<screen>root@ubu1204~# aptitude install mysql-server
+	<para>On Debian/Ubuntu you can use <command>apt install mysql-server</command><indexterm><primary>apt(8)</primary></indexterm> to install the <command>mysql server</command><indexterm><primary>mysql-server</primary></indexterm> and <command>client</command><indexterm><primary>mysql-client</primary></indexterm>.</para>
+	<screen>root@ubu1204~# apt install mysql-server
 The following NEW packages will be installed:
   libdbd-mysql-perl{a} libdbi-perl{a} libhtml-template-perl{a}
   libnet-daemon-perl{a} libplrpc-perl{a} mysql-client-5.5{a} 

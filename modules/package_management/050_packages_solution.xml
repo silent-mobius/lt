@@ -9,15 +9,15 @@ rpm -qa | grep wesnoth</screen>
 dpkg -l | grep gcc
 dpkg -l | grep sudo
 dpkg -l | grep wesnoth</screen>
-	<para>2. Use yum or aptitude to search for and install the scp, tmux, and man-pages packages. Did you find them all ?</para>
+	<para>2. Use yum or apt to search for and install the scp, tmux, and man-pages packages. Did you find them all ?</para>
 	<screen>On Red Hat/CentOS:
 yum search scp
 yum search tmux
 yum search man-pages</screen>
 	<screen>On Debian/Ubuntu:
-aptitude search scp
-aptitude search tmux
-aptitude search man-pages</screen>
+apt search scp
+apt search tmux
+apt search man-pages</screen>
 	<para>3. Search the internet for 'webmin' and figure out how to install it.</para>
 	<screen>Google should point you to webmin.com.</screen>
 	<screen>There are several formats available there choose .rpm, .deb or .tgz .</screen>

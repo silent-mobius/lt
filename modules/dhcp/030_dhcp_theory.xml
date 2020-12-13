@@ -19,7 +19,7 @@
 <?hard-pagebreak?>
 <section><title>installing a dhcp server</title>
 	<para>dhcp server for Debian/Mint</para>
-	<screen>debian10:~# aptitude install dhcp3-server
+	<screen>debian10:~# apt install dhcp3-server
 Reading package lists... Done
 Building dependency tree       
 Reading state information... Done

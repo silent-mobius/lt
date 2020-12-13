@@ -337,7 +337,7 @@ Host: scsi4 Channel: 00 Id: 00 Lun: 00
 <?hard-pagebreak?>
 	<section><title>erasing a hard disk</title>
 		<para>Before selling your old hard disk on the internet, it may be a good idea to erase it. By simply repartitioning, or by using the Microsoft Windows format utility, or even after an <command>mkfs</command> command, some people will still be able to read most of the data on the disk.</para>
-		<screen>root@debian6~# aptitude search foremost autopsy sleuthkit | tr -s ' '
+		<screen>root@debian6~# apt search foremost autopsy sleuthkit | tr -s ' '
 p autopsy - graphical interface to SleuthKit 
 p foremost - Forensics application to recover data 
 p sleuthkit - collection of tools for forensics analysis</screen>
@@ -379,7 +379,7 @@ Reading and comparing: done</screen>
  readahead     = 256 (on)
  geometry      = 24321/255/63, sectors = 390721968, start = 0</screen>
 		<para>Here a screenshot of <command>sdparm</command> on Ubuntu 10.10.</para>
-		<screen>root@ubu1010:~# aptitude install sdparm
+		<screen>root@ubu1010:~# apt install sdparm
 ...
 root@ubu1010:~# sdparm /dev/sda | head -1
     /dev/sda: ATA       FUJITSU MJA2160B  0081

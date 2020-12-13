@@ -48,7 +48,7 @@ Host: scsi0 Channel: 00 Id: 06 Lun: 00
   Vendor: VBOX     Model: HARDDISK         Rev: 1.0 
   Type:   Direct-Access                    ANSI SCSI revision: 05</screen>
 	<para>9. If possible, install <command>lsscsi</command>, <command>lshw</command> and use them to list the disks.</para>
-	<screen>Debian,Ubuntu: aptitude install lsscsi lshw</screen>
+	<screen>Debian,Ubuntu: apt install lsscsi lshw</screen>
 	<screen>Fedora: yum install lsscsi lshw</screen>
 	<screen>root@rhel53 ~# lsscsi 
 [0:0:2:0]    disk    VBOX     HARDDISK         1.0   /dev/sda

@@ -1,7 +1,7 @@
 <?hard-pagebreak?>
 <section><title>solution: network sniffing</title>
 	<para>1. Install wireshark on your computer (not inside a virtual machine).</para>
-	<screen>Debian/Ubuntu: aptitude install wireshark</screen>
+	<screen>Debian/Ubuntu: apt install wireshark</screen>
 	<screen>Red Hat/Mandriva/Fedora: yum install wireshark</screen>
 	<para>2. Start a ping between your computer and another computer.</para>
 	<screen>ping $ip_address</screen>

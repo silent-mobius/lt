@@ -169,7 +169,7 @@ Disk identifier: 0x00000000</screen>
 <?hard-pagebreak?>
 <section><title>iSCSI target on Debian</title>
 	<para>Installing the software for the target server requires <command>iscsitarget</command> on Ubuntu and Debian, and an extra <command>iscsitarget-dkms</command> for the kernel modules only on Debian.</para>
-	<screen>root@debby6:~# aptitude install iscsitarget
+	<screen>root@debby6:~# apt install iscsitarget
 The following NEW packages will be installed:
   iscsitarget 
 0 packages upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
@@ -183,7 +183,7 @@ Unpacking iscsitarget (from .../iscsitarget_1.4.20.2-1_i386.deb) ...
 Processing triggers for man-db ...
 Setting up iscsitarget (1.4.20.2-1) ...
 iscsitarget not enabled in "/etc/default/iscsitarget", not starting...(warning).</screen>
-	<para>On Debian 6 you will also need <command>aptitude install iscsitarget-dkms</command> for the kernel modules, on Debian 5 this is <command>aptitude install iscsitarget-modules-`uname -a`</command>. Ubuntu includes the kernel modules in the main package.</para>
+	<para>On Debian 6 you will also need <command>apt install iscsitarget-dkms</command> for the kernel modules, on Debian 5 this is <command>apt install iscsitarget-modules-`uname -a`</command>. Ubuntu includes the kernel modules in the main package.</para>
 	<para>The iSCSI target server is disabled by default, so we enable it.</para>
 	<screen>root@debby6:~# cat /etc/default/iscsitarget 
 ISCSITARGET_ENABLE=false
@@ -263,7 +263,7 @@ tid:1 name:iqn.2010-02.be.linux-training:storage.lun1</screen>
 <?hard-pagebreak?>
 <section><title>ISCSI initiator on ubuntu</title>
 	<para>First we install the iSCSi client software (on another computer than the target).</para>
-	<screen>root@ubu1104:~# aptitude install open-iscsi
+	<screen>root@ubu1104:~# apt install open-iscsi
 Reading package lists... Done
 Building dependency tree
 Reading state information... Done

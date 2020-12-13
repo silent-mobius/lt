@@ -38,7 +38,7 @@ file1  file2  summer.txt  winter.txt</screen>
 <section><title>Ctrl-r</title>
 	<para>Another option is to use <command>ctrl-r</command><indexterm><primary>ctrl-r</primary></indexterm> to search in the history. In the screenshot below i only typed <command>ctrl-r</command> followed by four characters <command>apti</command> and it finds the last command containing these four consecutive characters.</para>
 	<screen>paul@debian10:~$ 
-(reverse-i-search)`apti': sudo aptitude install screen</screen>
+(reverse-i-search)`apti': sudo apt install screen</screen>
 </section>
 <section><title>$HISTSIZE</title>
 	<para>The $HISTSIZE<indexterm><primary>$HISTSIZE</primary></indexterm> variable determines the number of commands that will be remembered in your current environment. Most distributions default this variable to 500 or 1000.</para>

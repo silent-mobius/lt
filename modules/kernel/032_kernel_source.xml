@@ -58,30 +58,30 @@ drwxr-xr-x 7 root root 4096 Oct 11 13:22 redhat</screen>
 <?hard-pagebreak?>
 	<section><title>downloading the kernel source</title>
 		<section><title>Debian</title>
-			<para>Installing the kernel source on Debian is really simple with <command>aptitude install linux-source</command><indexterm><primary>aptitude(1)</primary></indexterm>. You can do a search for all linux-source packeges first, like in this screenshot.</para>
-			<screen>root@barry:~# aptitude search linux-source
+			<para>Installing the kernel source on Debian is really simple with <command>apt install linux-source</command><indexterm><primary>apt(1)</primary></indexterm>. You can do a search for all linux-source packeges first, like in this screenshot.</para>
+			<screen>root@barry:~# apt search linux-source
 v   linux-source           -
 v   linux-source-2.6       -
 id  linux-source-2.6.15    - Linux kernel source for version 2.6.15
 i   linux-source-2.6.16    - Linux kernel source for version 2.6.16
 p   linux-source-2.6.18    - Linux kernel source for version 2.6.18
 p   linux-source-2.6.24    - Linux kernel source for version 2.6.24</screen>
-			<para>And then use <command>aptitude install</command> to download and install the Debian Linux kernel source code.</para>
-			<screen>root@barry:~# aptitude install linux-source-2.6.24</screen>
-			<para>When the aptitude is finished, you will see a new file named <command>/usr/src/linux-source-&#060;version&#062;.tar.bz2</command></para>
+			<para>And then use <command>apt install</command> to download and install the Debian Linux kernel source code.</para>
+			<screen>root@barry:~# apt install linux-source-2.6.24</screen>
+			<para>When the apt is finished, you will see a new file named <command>/usr/src/linux-source-&#060;version&#062;.tar.bz2</command></para>
 			<screen>root@barry:/usr/src# ls -lh
 drwxr-xr-x 20 root root 4.0K 2006-04-04 22:12 linux-source-2.6.15
 drwxr-xr-x 19 root root 4.0K 2006-07-15 17:32 linux-source-2.6.16
 -rw-r--r--  1 root root  45M 2008-12-02 10:56 linux-source-2.6.24.tar.bz2</screen>
 		</section>
 		<section><title>Ubuntu</title>
-			<para>Ubuntu is based on Debian and also uses <command>aptitude</command>, so the task is very similar.</para>
-			<screen>root@laika:~# aptitude search linux-source
+			<para>Ubuntu is based on Debian and also uses <command>apt</command>, so the task is very similar.</para>
+			<screen>root@laika:~# apt search linux-source
 i   linux-source           - Linux kernel source with Ubuntu patches
 v   linux-source-2.6       -
 i A linux-source-2.6.24    - Linux kernel source for version 2.6.24
-root@laika:~# aptitude install linux-source</screen>
-			<para>And when aptitude finishes, we end up with a <command>/usr/src/linux-source-&#060;version&#062;.tar.bz</command> file.</para>
+root@laika:~# apt install linux-source</screen>
+			<para>And when apt finishes, we end up with a <command>/usr/src/linux-source-&#060;version&#062;.tar.bz</command> file.</para>
 			<screen>oot@laika:~# ll /usr/src
 total 45M
 -rw-r--r--  1 root root  45M 2008-11-24 23:30 linux-source-2.6.24.tar.bz2</screen>

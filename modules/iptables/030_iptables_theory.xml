@@ -31,7 +31,7 @@ target     prot opt source               destination</screen>
 iptables: Applying firewall rules                              [ ok ]
 [root@centos6 ~]#</screen>
 	<para>Debian and *buntu distributions do not have this script, but allow for an uninstall.</para>
-	<screen>root@debian6~# aptitude purge iptables</screen>
+	<screen>root@debian6~# apt purge iptables</screen>
 </section>
 <?hard-pagebreak?>
 <section><title>the filter table</title>

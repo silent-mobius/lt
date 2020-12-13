@@ -160,7 +160,7 @@ perl: /usr/bin/prename</screen>
 </section>
 <section><title>perl</title>
 	<para>The <command>rename</command> command is actually a perl script that uses <command>perl regular expressions</command>. The complete manual for these can be found by typing <command>perldoc perlrequick</command><indexterm><primary>perldoc</primary></indexterm> (after installing <command>perldoc</command>).</para>
-	<screen>root@pi:~# <command>aptitude install perl-doc</command>
+	<screen>root@pi:~# <command>apt install perl-doc</command>
 The following NEW packages will be installed:
   perl-doc
 0 packages upgraded, 1 newly installed, 0 to remove and 0 not upgraded.

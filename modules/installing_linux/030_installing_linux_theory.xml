@@ -17,8 +17,8 @@
 00:03:ba:09:7c:f9       192.168.1.72
 00:03:ba:09:7f:d2       192.168.1.73</screen>
 	<para>We need to install the rarpd and tftpd daemons on the (Debian) machine that will be hosting the install image.</para>
-	<screen>root@laika:~# aptitude install rarpd
-root@laika:~# aptitude install tftpd</screen>
+	<screen>root@laika:~# apt install rarpd
+root@laika:~# apt install tftpd</screen>
 	<para>The tftp services must be activated in inetd or xinetd.</para>
 	<screen>
 root@laika:~# cat /etc/inetd.conf | tail -1

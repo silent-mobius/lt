@@ -1,7 +1,7 @@
 <?hard-pagebreak?>
 <section><title>systemd</title>
 	<para><mediaobject><imageobject>
-  <imagedata fileref="images/systemd_diagram.png" format="PNG" align="center" width="14cm"></imagedata></imageobject></mediaobject></para>
+  <imagedata fileref="../images/systemd_diagram.png" format="PNG" align="center" width="14cm"></imagedata></imageobject></mediaobject></para>
     <para>
   <command>systemd</command>  is a software suite that provides an array of system components for Linux operating systems.
 Its main aim is to unify service configuration and behavior across Linux distributions; <command>systemd</command>'s primary component is a 

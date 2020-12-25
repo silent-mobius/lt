@@ -1,10 +1,10 @@
 #!/usr/bin/env bash 
 
 
-dot="$(cd "$(dirname "$0")"; pwd)"
+cd $(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
 
 help() {
-	clear
+
 	echo
 	echo -e "linux-training book build script\t\thttp://linux-training.be"
 	echo
@@ -260,19 +260,25 @@ build_xml() {
 	}
 
 build_pdf() {
-	#set -x
-	validate_dependencies
+	sleep 5
 	set_xsl
+	sleep 5
+
 	set_JAVA
+		sleep 5
+
 	echo 
 	echo "---------------------------------"
 	echo "Generating $pdffile"
 	tail -n +2 $xmlfile > $tmp_xmlfile
+	sleep 5
+
 	eval $(echo fop -xml $tmp_xmlfile -xsl $XSLFILE -pdf $pdffile ) >&2
+	sleep 5
+
 	#eval $(echo fop -xml $tmp_xmlfile -xsl $XSLFILE -pdf $pdffile $EXECDEBUG) >&2 #there is an issue with EXECDEBUG param
 	#fop -xml $tmp_xmlfile -xsl $XSLFILE -pdf $pdffile 
 	ln -s $V $filename.xml $OUTPUTDIR/book.pdf
-	#set +x
 	echo "---------------------------------"
 	}
 

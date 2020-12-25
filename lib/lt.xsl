@@ -38,7 +38,7 @@
 <!-- screen tags in green -->
 <xsl:param name="shade.verbatim" select="1"/>
 <xsl:attribute-set condition="fo" name="shade.verbatim.style">
-  <xsl:attribute name="background-color">#B3FFB3</xsl:attribute>
+<xsl:attribute name="background-color">#B3FFB3</xsl:attribute>
 </xsl:attribute-set>
  <!--screen tags in green -->
 

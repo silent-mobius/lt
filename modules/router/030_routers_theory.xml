@@ -1,7 +1,7 @@
 <?hard-pagebreak?>
 <section><title>router or firewall</title>
 	<para>A <command>router</command><indexterm><primary>router</primary></indexterm> is a device that connects two networks. A <command>firewall</command><indexterm><primary>firewall</primary></indexterm> is a device that besides acting as a <command>router</command>, also contains (and implements) rules to determine whether packets are allowed to travel from one network to another. A firewall can be configured to block access based on networks, hosts, protocols and ports. Firewalls can also change the contents of packets while forwarding them.</para>
-	<para><mediaobject><imageobject><imagedata fileref="images/router_or_firewall.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/router_or_firewall.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 </section>
 <section><title>packet forwarding</title>
 	<para><command>Packet forwarding</command> means allowing packets to go from one network to another. When a multihomed host is connected to two different networks, and it allows packets to travel from one network to another through its two network interfaces, it is said to have enabled <command>packet forwarding</command><indexterm><primary>packet forwarding</primary></indexterm>. </para>

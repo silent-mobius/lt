@@ -39,14 +39,14 @@ root@debian10:~#</screen>
 <?hard-pagebreak?>
 <section><title>client proxy settings</title>
 <para>To enable a proxy server in <command>Firefox</command> or <command>Iceweasel</command> go to <command>Edit Preferences</command> and configure as shown in this screenshot (replace 192.168.1.60 with the ip address of your proxy server).</para>
-	<para><mediaobject><imageobject><imagedata fileref="images/proxy_firefoxsettings.png" format="PNG" align="center"></imagedata></imageobject></mediaobject></para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/proxy_firefoxsettings.png" format="PNG" align="center"></imagedata></imageobject></mediaobject></para>
 	<para>Test that your internet works with the proxy enabled. Also test that after a <command>service squid stop</command> command on your proxy server that you get a message similar to this schreenshot.</para>
-	<para><mediaobject><imageobject><imagedata fileref="images/firefox_noproxy.png" format="PNG" align="center"></imagedata></imageobject></mediaobject></para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/firefox_noproxy.png" format="PNG" align="center"></imagedata></imageobject></mediaobject></para>
 <?hard-pagebreak?>
 <para>To enable a proxy server with Google Chrome (or Debian Chromium) start the program from the command line like this:</para>
 <screen>paul@debian10:~$ chromium --proxy-server='192.168.1.60:3128'</screen>
 <para>Disabling the proxy with <command>service squid stop</command> should result in an error message similar to this screenshot.</para>
-	<para><mediaobject><imageobject><imagedata fileref="images/chromium_noproxy.png" format="PNG" align="center"></imagedata></imageobject></mediaobject></para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/chromium_noproxy.png" format="PNG" align="center"></imagedata></imageobject></mediaobject></para>
 </section>
 <?hard-pagebreak?>
 <section><title>upside down images</title>
@@ -68,21 +68,21 @@ while (&#060;&#062;) {
  chomp $_;
  if ($_ =~ /(.*\.jpg)/i) {
   $url = $1;
-  system("/usr/bin/wget", "-q", "-O","/var/www/images/$pid-$count.jpg", "$url");
-  system("/usr/bin/mogrify", "-flip","/var/www/images/$pid-$count.jpg");
-  print "http://127.0.0.1/images/$pid-$count.jpg\n";
+  system("/usr/bin/wget", "-q", "-O","/var/www/../images/$pid-$count.jpg", "$url");
+  system("/usr/bin/mogrify", "-flip","/var/www/../images/$pid-$count.jpg");
+  print "http://127.0.0.1/../images/$pid-$count.jpg\n";
  }
  elsif ($_ =~ /(.*\.gif)/i) {
   $url = $1;
-  system("/usr/bin/wget", "-q", "-O","/var/www/images/$pid-$count.gif", "$url");
-  system("/usr/bin/mogrify", "-flip","/var/www/images/$pid-$count.gif");
-  print "http://127.0.0.1/images/$pid-$count.gif\n";
+  system("/usr/bin/wget", "-q", "-O","/var/www/../images/$pid-$count.gif", "$url");
+  system("/usr/bin/mogrify", "-flip","/var/www/../images/$pid-$count.gif");
+  print "http://127.0.0.1/../images/$pid-$count.gif\n";
  }
  elsif ($_ =~ /(.*\.png)/i) {
   $url = $1;
-  system("/usr/bin/wget", "-q", "-O","/var/www/images/$pid-$count.png", "$url");
-  system("/usr/bin/mogrify", "-flip","/var/www/images/$pid-$count.png");
-  print "http://127.0.0.1/images/$pid-$count.png\n";
+  system("/usr/bin/wget", "-q", "-O","/var/www/../images/$pid-$count.png", "$url");
+  system("/usr/bin/mogrify", "-flip","/var/www/../images/$pid-$count.png");
+  print "http://127.0.0.1/../images/$pid-$count.png\n";
  }
  else {
          print "$_\n";;
@@ -100,7 +100,7 @@ root@debian10:~# chmod 755 /var/www/images
 root@debian10:~# usermod -aG www-data proxy
 root@debian10:~# usermod -aG proxy www-data</screen>
 <para>Test that it works after restarting <command>squid</command> and <command>apache2</command>.</para>
-	<para><mediaobject><imageobject><imagedata fileref="images/proxy_upsidedown_xkcd.png" format="PNG" align="center"></imagedata></imageobject></mediaobject></para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/proxy_upsidedown_xkcd.png" format="PNG" align="center"></imagedata></imageobject></mediaobject></para>
 </section>
 <?hard-pagebreak?>
 <section><title>/var/log/squid</title>

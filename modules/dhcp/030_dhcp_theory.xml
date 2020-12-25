@@ -2,13 +2,13 @@
 <section><title>four broadcasts</title>
 	<para><command>dhcp</command> works with layer 2 broadcasts. A dhcp client that starts, will send a <command>dhcp discover</command> on the network. All <command>dhcp servers</command> (that have a lease available) will respond with a <command>dhcp offer</command>. The client will choose one of those offers and will send a <command>dhcp request</command> containing the chosen offer. The <command>dhcp server</command> usually responds with a <command>dhcp ack</command>(knowledge).</para>
 	<para>In wireshark it looks like this.</para>
-	<mediaobject><imageobject><imagedata fileref="images/wireshark_dhcp_four_broadcasts.png" format="EPS" align="center"></imagedata></imageobject></mediaobject>
+	<mediaobject><imageobject><imagedata fileref="../images/wireshark_dhcp_four_broadcasts.png" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 	<para>When this procedure is finished, then the client is allowed to use that ip-configuration until the end of its lease time.</para>
 </section>
 <?hard-pagebreak?>
 <section><title>picturing dhcp</title>
 	<para>Here we have a small network with two <command>dhcp servers</command> named DHCP-SRV1 and DHCP-SRV2 and two clients (SunWS1 and Mac42). All computers are connected by a hub or switch (pictured in the middle). All four computers have a cable to the hub (cables not pictured).</para>
-	<mediaobject><imageobject><imagedata fileref="images/dhcp.png" format="EPS" align="center"></imagedata></imageobject></mediaobject>
+	<mediaobject><imageobject><imagedata fileref="../images/dhcp.png" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 	<para>1. The client SunWS1 sends a <command>dhcp discover</command> on the network. All computers receive this broadcast.</para>
 	<para>2. Both <command>dhcp servers</command> answer with a <command>dhcp offer</command>. DHCP-SRV1 is a <command>dedicated dhcp server</command> and is faster in sending a <command>dhcp offer</command> than DHCP-SRV2 (who happens to also be a file server).</para>
 	<para>3. The client chooses the offer from DHCP-SRV1 and sends a <command>dhcp request</command> on the network.</para>

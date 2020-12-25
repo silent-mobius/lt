@@ -3,9 +3,9 @@
 	<section><title>name to ip address resolution</title>
 		<para>The <command>domain name system</command><indexterm><primary>domain name system</primary></indexterm> or <command>dns</command><indexterm><primary>dns</primary></indexterm> is a service on a tcp/ip network that enables clients to translate names into ip addresses. Actually <command>dns</command> is much more than that, but let's keep it simple for now.</para>
 		<para>When you use a browser to go to a website, then you type the name of that website in the url bar. But for your computer to actually communicate with the web server hosting said website, your computer needs the ip address of that web server. That is where <command>dns</command> comes in.</para>
-		<mediaobject><imageobject><imagedata fileref="images/dns_01_what_is_dns.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
+		<mediaobject><imageobject><imagedata fileref="../images/dns_01_what_is_dns.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 		<para>In wireshark you can use the <command>dns</command> filter to see this traffic.</para>
-		<mediaobject><imageobject><imagedata fileref="images/dns_01_what_is_dns.ws.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
+		<mediaobject><imageobject><imagedata fileref="../images/dns_01_what_is_dns.ws.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 	</section>
 	<section><title>history</title>
 		<para>In the Seventies, only a few hundred computers were connected to the internet. To resolve names, computers had a flat file that contained a table to resolve hostnames to ip addresses. This local file was downloaded from <command>hosts.txt</command><indexterm><primary>hosts.txt</primary></indexterm> on an ftp server in Stanford.</para>
@@ -18,7 +18,7 @@
 		<para>The question a client asks a dns server is called a <command>query</command><indexterm><primary>query (dns)</primary></indexterm>. When a client queries for an ip address, this is called a <command>forward lookup query</command><indexterm><primary>forward lookup query</primary></indexterm> (as seen in the previous drawing).</para>
 		<para>The reverse, a query for the name of a host, is called a <command>reverse lookup query</command><indexterm><primary>reverse lookup query</primary></indexterm>.</para>
 		<para>Below a picture of a <command>reverse lookup query</command>.</para>
-		<mediaobject><imageobject><imagedata fileref="images/dns_02_reverse.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
+		<mediaobject><imageobject><imagedata fileref="../images/dns_02_reverse.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 		<para>Here is a screenshot of a <command>reverse lookup query</command> in <command>nslookup</command><indexterm><primary>nslookup</primary></indexterm>.</para>
 		<screen>root@debian10:~# <command>nslookup</command>
 > set type=PTR
@@ -37,7 +37,7 @@ R? 87.155.93.188.in-addr.arpa. (44)
 11:01:29.640093 IP 192.168.1.42.domain > 192.168.1.103.42041: 14763 1/0\
 /0 PTR antares.ginsys.net. (76)</screen>
 		<para>And here is what it looks like in <command>wireshark</command> (note this is an older screenshot).</para>
-		<mediaobject><imageobject><imagedata fileref="images/dns_02_reverse.ws.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
+		<mediaobject><imageobject><imagedata fileref="../images/dns_02_reverse.ws.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 	</section>
 <?hard-pagebreak?>
 	<section><title>/etc/resolv.conf</title>
@@ -59,7 +59,7 @@ root@debian10:~#</screen>
 <section><title>dns namespace</title>
 	<section><title>hierarchy</title>
 		<para>The <command>dns namespace</command><indexterm><primary>dns namespace</primary></indexterm> is hierarchical tree structure, with the <command>root servers</command> (aka dot-servers) at the top. The <command>root servers</command><indexterm><primary>root(DNS)</primary></indexterm> are usually represented by a dot.</para>
-		<para><mediaobject><imageobject><imagedata fileref="images/dns_03_namespace_tld.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+		<para><mediaobject><imageobject><imagedata fileref="../images/dns_03_namespace_tld.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 		<para>Below the <command>root-servers</command> are the <command>Top Level Domains</command> or <command>tld</command>'s.</para>
 		<para>There are more <command>tld</command>'s than shown in the picture. Currently about 200 countries have a <command>tld</command>. And there are several general <command>tld</command>'s like .com, .edu, .org, .gov, .net, .mil, .int and more recently also .aero, .info, .museum, ...</para>
 	</section>
@@ -93,7 +93,7 @@ root@debian10:~#</screen>
 	<section><title>domains</title>
 		<para>One level below the <command>top level domains</command> are the <command>domains</command><indexterm><primary>domain (dns)</primary></indexterm>. Domains can have subdomains (also called child domains).</para>
 		<para>This picture shows <command>dns domains</command> like google.com, chess.com, linux-training.be (there are millions more).</para>
-		<mediaobject><imageobject><imagedata fileref="images/dns_03_namespace_domains.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
+		<mediaobject><imageobject><imagedata fileref="../images/dns_03_namespace_domains.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 		<para>DNS domains are registered at the <command>tld</command> servers, the <command>tld</command> servers are registered at the <command>dot servers</command>.</para>
 	</section>
 <?hard-pagebreak?>
@@ -229,7 +229,7 @@ root@gwen:~# <command>cat /etc/debian_version</command>
 	</section>
 	<section><title>dns zones</title>
 		<para>A <command>zone</command><indexterm><primary>zone (dns)</primary></indexterm> (aka a <command>zone of authority</command>) is a portion of the DNS tree that covers one domain name or child domain name. The picture below represents zones as blue ovals. Some zones will contain delegate authority over a child domain to another zone.</para>
-		<para><mediaobject><imageobject><imagedata fileref="images/dns_04_zones.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+		<para><mediaobject><imageobject><imagedata fileref="../images/dns_04_zones.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 		<para>A <command>dns server</command> can be <command>authoritative</command><indexterm><primary>authoritative zone</primary></indexterm> over 0, 1 or more <command>dns zones</command>. We will see more details later on the relation between a <command>dns server</command> and a <command>dns zone</command>.</para>
 		<para>A <command>dns zone</command> consists of <command>records</command>, also called <command>resource records</command>. We will list some of those <command>resource records</command> on the next page.</para>
 	</section>
@@ -266,7 +266,7 @@ root@gwen:~# <command>cat /etc/debian_version</command>
 	<section><title>caching only server without forwarder</title>
 		<para>A caching only server without forwarder will have to get information elsewhere. When it receives a query from a client, then it will consult one of the <command>root servers</command>. The <command>root server</command><indexterm><primary>root server (dns)</primary></indexterm> will refer it to a <command>tld</command> server, which will refer it to another <command>dns</command> server. That last server might know the answer to the query, or may refer to yet another server. In the end, our hard working <command>dns</command> server will find an answer and report this back to the client. </para>
 		<para>In the picture below, the clients asks for the ip address of linux-training.be. Our caching only server will contact the root server, and be refered to the .be server. It will then contact the .be server and be refered to one of the name servers of Openminds. One of these name servers (in this cas ns1.openminds.be) will answer the query with the ip address of linux-training.be. When our caching only server reports this to the client, then the client can connect to this website.</para>
-		<mediaobject><imageobject><imagedata fileref="images/dns_06_caching_only.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
+		<mediaobject><imageobject><imagedata fileref="../images/dns_06_caching_only.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 		<para>Sniffing with <command>tcpdump</command> will give you this (the first 20 characters of each line are cut).</para>
 		<screen>192.168.1.103.41251 > M.ROOT-SERVERS.NET.domain: 37279% [1au] A? linux-tr\
 aining.be. (46)
@@ -282,7 +282,7 @@ ns2.openminds.be.domain > 192.168.1.103.7514: 60888*- 1/0/1 A 188.93.155.\
 <?hard-pagebreak?>
 	<section><title>caching only server with forwarder</title>
 		<para>A <command>caching only server</command> with a <command>forwarder</command><indexterm><primary>forwarder (dns)</primary></indexterm> is a DNS server that will get all its information from the <command>forwarder</command>. The <command>forwarder</command> must be a <command>dns server</command> for example the <command>dns server</command> of an <command>internet service provider</command>.</para>
-		<para><mediaobject><imageobject><imagedata fileref="images/dns_05_forwarder.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+		<para><mediaobject><imageobject><imagedata fileref="../images/dns_05_forwarder.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 		<para>This picture shows a <command>dns server</command> on the company LAN that has set the <command>dns server</command> from their <command>isp</command> as a <command>forwarder</command>. If the ip address of the <command>isp dns server</command> is 212.71.8.10, then the following lines would occur in the <command>named.conf</command> file of the company <command>dns server</command>:</para>
 <screen>forwarders {
  	212.71.8.10;
@@ -301,15 +301,15 @@ ns2.openminds.be.domain > 192.168.1.103.7514: 60888*- 1/0/1 A 188.93.155.\
 <?hard-pagebreak?>
 <section><title>authoritative dns servers</title>
 	<para>A DNS server that is controlling a zone, is said to be the <command>authoritative</command><indexterm><primary>authoritative (dns)</primary></indexterm> DNS server for that zone. Remember that a <command>zone</command><indexterm><primary>zone (dns)</primary></indexterm> is a collection of <command>resource records</command>.</para>
-	<para><mediaobject><imageobject><imagedata fileref="images/dns_authoritative_zone.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/dns_authoritative_zone.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 </section>
 <section><title>primary and secondary</title>
 	<para>When you set up the first <command>authoritative</command> dns server for a zone, then this is called the <command>primary dns server</command><indexterm><primary>primary dns server</primary></indexterm>. This server will have a readable and writable copy of the <command>zone database</command>. For reasons of fault tolerance, performance or load balancing you may decide to set up another <command>dns server</command> with authority over that zone. This is called a <command>secondary</command><indexterm><primary>secondary dns server</primary></indexterm> dns server.</para>
-	<para><mediaobject><imageobject><imagedata fileref="images/dns_primary_secondary.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/dns_primary_secondary.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 </section>
 <section><title>zone transfers</title>
 		<para>The slave server receives a copy of the zone database from the master server using a <command>zone transfer</command><indexterm><primary>zone transfer (dns)</primary></indexterm>. Zone transfers are requested by the slave servers at regular intervals. Those intervals are defined in the <command>soa record</command><indexterm><primary>soa (dns record)</primary></indexterm>.</para>
-	<para><mediaobject><imageobject><imagedata fileref="images/dns_zone_transfer_pic.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/dns_zone_transfer_pic.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 	<para>You can force a refresh from a zone with <command>rndc</command>. The example below force a transfer of the <command>fred.local</command> zone, and shows the log from <command>/var/log/syslog</command>.</para>
 	<screen>root@debian10:/etc/bind# <command>rndc refresh fred.local</command>
 root@debian10:/etc/bind# <command>grep fred /var/log/syslog | tail -7 | cut -c38-</command>
@@ -326,7 +326,7 @@ root@debian10:/etc/bind#</screen>
 <section><title>master and slave</title>
 	<para>When adding a <command>secondary dns server</command><indexterm><primary>secondary server (DNS)</primary></indexterm> to a zone, then you will configure this server as a <command>slave server</command><indexterm><primary>slave server (DNS)</primary></indexterm> to the <command>primary server</command><indexterm><primary>primary server (DNS)</primary></indexterm>. The primary server then becomes the <command>master server</command><indexterm><primary>master server (DNS)</primary></indexterm> of the slave server.</para>
 	<para>Often the <command>primary dns server</command> is the <command>master</command> server of all slaves. Sometimes a <command>slave server</command> is <command>master server</command> for a second line slave server. In the picture below ns1 is the primary dns server and ns2, ns3 and ns4 are secondaries. The master for slaves ns2 and ns3 is ns1, but the master for ns4 is ns2.</para>
-	<para><mediaobject><imageobject><imagedata fileref="images/dns_master_slave.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/dns_master_slave.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 </section>
 <section><title>SOA record</title>
 		<para>The <command>soa record</command> contains a <command>refresh</command> value. If this is set to 30 minutes, then the slave server will request a copy of the zone file every 30 minutes. There is also a <command>retry</command> value. The retry value is used when the master server did not reply to the last zone transfer request. The value for <command>expiry time</command> says how long the slave server will answer to queries, without receiving a zone update.</para>
@@ -348,7 +348,7 @@ linux-training.be
         minimum = 3600</screen>
 		<para>Zone transfers only occur when the zone database was updated (meaning when one or more resource records were added, removed or changed on the master server). The slave server will compare the <command>serial number</command> of its own copy of the SOA record with the serial number of its master's SOA record. When both serial numbers are the same, then no update is needed (because no records were added, removed or deleted). When the slave has a lower serial number than its master, then a zone transfer is requested.</para>
 		<para>Below a zone transfer captured in wireshark.</para>
-		<mediaobject><imageobject><imagedata fileref="images/dns_zone_transfer.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
+		<mediaobject><imageobject><imagedata fileref="../images/dns_zone_transfer.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 	</section>
 	<section><title>full or incremental zone transfers</title>
 		<para>When a zone tranfer occurs, this can be either a full zone transfer or an incremental zone transfer. The decision depends on the size of the transfer that is needed to completely update the zone on the slave server. An incremental zone transfer is prefered when the total size of changes is smaller than the size of the zone database. Full zone transfers use the <command>axfr</command><indexterm><primary>axfr</primary></indexterm> protocol, incremental zone transfer use the <command>ixfr</command><indexterm><primary>ixfr</primary></indexterm> protocol. </para>
@@ -442,7 +442,7 @@ total 52
 	<para>Hey this seems to work without a <command>forwarder</command>. Using a sniffer you can find out what really happens. Your freshly install dns server is not using a cache, and it is not using your local dns server (from /etc/resolv.conf). So where is this information coming from ? And what can you learn from sniffing this dns traffic ?</para>
 <?hard-pagebreak?>
 	<para>4. Explain in detail what happens when you enable a caching only dns server without forwarder. This wireshark screenshot can help, but you learn more by sniffing the traffic yourself.</para>
-	<mediaobject><imageobject><imagedata fileref="images/wireshark_org_server.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
+	<mediaobject><imageobject><imagedata fileref="../images/wireshark_org_server.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 	<para>You should see traffic to a <command>root name server</command> whenever you try a new <command>tld</command> for the first time. Remember that <command>dns</command> is a caching protocol, which means that repeating a query will generate a lot less traffic since your <command>dns server</command> will still have the answer in its memory.</para>
 </section>
 <?hard-pagebreak?>
@@ -488,7 +488,7 @@ google-public-dns-a.google.com.domain > 10.104.33.30.19381: 18237 1/0/1 A 188\
 .93.155.87 (62)</screen>
 <?hard-pagebreak?>
  	<para>Below is an (old) wireshark screenshot that can help, you should see something similar (but with different ip addresses).</para>
-	<mediaobject><imageobject><imagedata fileref="images/dns_forwarder.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
+	<mediaobject><imageobject><imagedata fileref="../images/dns_forwarder.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 	<para>7. What happens when you query for the same domain name more than once ?</para>
 	<para>8. Why does it say "non-authoritative answer" ? When is a dns server authoritative ?</para>
 	<para>9. You can also use <command>dig</command> instead of <command>nslookup</command>.</para>

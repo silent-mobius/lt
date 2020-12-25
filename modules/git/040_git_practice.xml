@@ -9,4 +9,12 @@
 	<para>7.Verify on <command>gitlab.com</command> that the project has been setup and is updated with <command>REAMDE.md</command> and <command>TODO.md</command>.</para>
 	<para>8.Add git_hello.sh script that prints hello to username from its current location.</para>
 	<para>9.Push the script to gitlab repository.</para>
+	<para>10.Create a branch named beta and move to it.</para>
+	<para>11.Check on which branch are you currently.</para>
+	<para>12.1.Add script called <command>lib.sh</command>.</para>
+	<para>12.2.In <command>lib.sh</command> create a function called decowhich clears the screen and prints ASCII art of hello world (search figlet on your linux box.) </para>
+	<para>12.3.Import the function into git_hello script</para>
+	<para>13.Move changes to your new branch that you created before.</para>
+	<para>14.Push changes to remote new branch</para>
+	<para>15.Merge the master branch with beta branch </para>
 </section>

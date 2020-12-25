@@ -15,7 +15,7 @@ Loading mirror speeds from cached hostfile
 	</section>
 	<section><title>selecting interface</title>
 		<para>When you start <command>wireshark</command> for the first time, you will need to select an interface. You will see a dialog box that looks similar to this one.</para>
-		<para><mediaobject><imageobject><imagedata fileref="images/wireshark_capture_interfaces.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+		<para><mediaobject><imageobject><imagedata fileref="../images/wireshark_capture_interfaces.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 		<para>It is possible that there are no interfaces available because some distributions only allow root to sniff the network. You may need to use <command>sudo wireshark</command>.</para>
 		<para>Or you can follow the general advice to sniff using <command>tcpdump</command> or any other tool, and save the capture to a file. Any saved capture can be analyzed using <command>wireshark</command> at a later time.</para>
 	</section>
@@ -52,38 +52,38 @@ PING centos7.paul.local (10.104.33.31) 56(84) bytes of data.
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 0.590/0.590/0.590/0.000 ms</screen>
 		<para>In total more than 200 packets were sniffed from the network. Things become clearer when you enter <command>icmp</command> in the filter field and press the <command>apply</command> button.</para>
-		<para><mediaobject><imageobject><imagedata fileref="images/wireshark_ping.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+		<para><mediaobject><imageobject><imagedata fileref="../images/wireshark_ping.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 	</section>
 <?hard-pagebreak?>
 	<section><title>sniffing ping and dns</title>
 		<para>Using the same capture as before, but now with a different <command>filter</command>. We want to see both <command>dns</command> and <command>icmp</command> traffic, so we enter both in the filter field.</para>
 		<para>We put <command>dns or icmp</command> in the filter to achieve this. Putting <command>dns and icmp</command> would render nothing because there is no packet that matches both protocols.</para>
-		<para><mediaobject><imageobject><imagedata fileref="images/wireshark_icmpordns.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+		<para><mediaobject><imageobject><imagedata fileref="../images/wireshark_icmpordns.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 		<para>In the screenshot above you can see that packets 25 and 26 both have 10.104.33.30 as <command>source</command> and <command>destination</command> ip address. That is because the dns client is the same computer as the dns server.</para>
 		<para>The same is true for packets 31 and 32, since the machine is actually pinging itself.</para>
 	</section>
 	<section><title>specific ip address</title>
 		<para>This is a screenshot that filters for <command>dns</command> packets that contain a certain <command>ip address</command>. The filter in use is <command>ip.addr==10.104.33.30 and dns</command>. The <command>and</command> directive forces each displayed packet to match both conditions.</para>
-		<para><mediaobject><imageobject><imagedata fileref="images/wireshark_ipanddns.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+		<para><mediaobject><imageobject><imagedata fileref="../images/wireshark_ipanddns.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 		<para>Packet 93 is the <command>dns query</command> for the A record of linux-training.be. Packet 98 is the response from the <command>dns server</command>. What do you think happened in the packets between 93 and 98 ? Try to answer this before reading on (it always helps to try to predict what you will see, and then checking your prediction).</para>
 	</section>
 	<section><title>filtering by frame</title>
 		<para>The correct technical term for a <command>packet</command> as sniffed is a <command>frame</command> (because we sniff on layer two). So to display packets with certain numbers, we use <command>frame.number</command> in the filter.</para>
-		<para><mediaobject><imageobject><imagedata fileref="images/wireshark_framenumber.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+		<para><mediaobject><imageobject><imagedata fileref="../images/wireshark_framenumber.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 	</section>
 <?hard-pagebreak?>
 	<section><title>looking inside packets</title>
 		<para>The middle pane can be expanded. When selecting a line in this pane, you can see the corresponding bytes in the frame in the bottom panel.</para>
 		<para>This screenshot shows the middle pane with the source address of my laptop selected.</para>
-		<para><mediaobject><imageobject><imagedata fileref="images/wireshark_source_mac.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+		<para><mediaobject><imageobject><imagedata fileref="../images/wireshark_source_mac.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 		<para>Note that the above works fine when sniffing one interface. When sniffing with for example <command>tcpdump -i any</command> you will end up with <command>Linux cooked</command> at this level.</para>
-		<para><mediaobject><imageobject><imagedata fileref="images/wireshark_cooked.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+		<para><mediaobject><imageobject><imagedata fileref="../images/wireshark_cooked.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 	</section>
 	<section><title>other filter examples</title>
 		<para>You can combine two protocols with a logical <command>or</command> between them. The example below shows how to filter only <command>arp</command> and <command>bootp</command><indexterm><primary>bootp</primary></indexterm> (or <command>dhcp</command><indexterm><primary>dhcp</primary></indexterm>) packets.</para>
-		<para><mediaobject><imageobject><imagedata fileref="images/wireshark_arp_bootp.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+		<para><mediaobject><imageobject><imagedata fileref="../images/wireshark_arp_bootp.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 		<para>This example shows how to filter for <command>dns</command><indexterm><primary>dns</primary></indexterm> traffic containing a certain <command>ip address</command>.</para>
-		<para><mediaobject><imageobject><imagedata fileref="images/wireshark_dns_ipaddress.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+		<para><mediaobject><imageobject><imagedata fileref="../images/wireshark_dns_ipaddress.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 	</section>
 </section>
 <?hard-pagebreak?>

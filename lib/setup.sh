@@ -2,6 +2,12 @@
 
 dot="$(cd "$(dirname "$0")"; pwd)"
 
+. $dot/lib/vars.sh
+
+. $dot/lib/build.sh
+. $dot/lib/dep.sh
+
+
 set_xsl() {
 	if	[ -r $BOOKSDIR/$book/lt.xsl ]
 		then	XSLFILE="$BOOKSDIR/$book/lt.xsl"

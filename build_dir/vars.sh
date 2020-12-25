@@ -1,4 +1,12 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
+#set -xe
+########################################################################
+#
+#
+#
+#
+########################################################################
+
 
 ### module info ###
 # The build environment expects to live in a subdir build/
@@ -8,20 +16,20 @@
 # ./modules/
 # ./build/
 
-cd $(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)
+
 
 ### settings ###
 
-OUTPUTDIR=".$dot/../output"
+OUTPUTDIR="./output"
 redirfile="$OUTPUTDIR/debug.txt"
 HTMLDIR="$OUTPUTDIR/html"
 HTMLIMGDIR="$HTMLDIR/images"
-IMAGESDIR="$dot/images" 
-MODULESDIR="$dot/modules"
-BUILDDIR="$dot/../"
+IMAGESDIR="./images" 
+MODULESDIR="./modules"
+BUILDDIR="."
 LIBDIR="$BUILDDIR/lib"
 export FOP_OPTS="-Xms512m -Xmx512m"
-export BOOKSDIR=$dot/../books
+export BOOKSDIR=./books
 HTMLXSL="$LIBDIR/html.xsl"
 HTMLCSS="$LIBDIR/html.css"
 
@@ -40,9 +48,3 @@ APPENDICES=""
 DATECODE=$(date +%y%m%d | sed s/^0//)
 PUBDATE=$(date +'%Y-%m-%d')
 YEAR=$(date +%Y)
-
-
-
-#####
-# Main - _- _- _-is implemented in main.sh file _- _- _- _- _- _- _- _- _- _- _- _ 
-#####

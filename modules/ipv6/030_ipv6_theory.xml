@@ -106,9 +106,9 @@ PING ff02::1(ff02::1) from fe80::a00:27ff:fe3c:4346 eth0: 56 data bytes
 ipv6-test.com
 </screen>
 	<para>Going to the ipv6-test.com website will test whether you have a valid accessible ipv6 address.</para>
-	<mediaobject><imageobject><imagedata fileref="images/ipv6_test_ok.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
+	<mediaobject><imageobject><imagedata fileref="../images/ipv6_test_ok.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 	<para>Going to the test-ipv6.com website will also test whether you have a valid accessible ipv6 address.</para>
-	<mediaobject><imageobject><imagedata fileref="images/ipv6_test2_ok.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
+	<mediaobject><imageobject><imagedata fileref="../images/ipv6_test2_ok.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 </section>
 
 <?hard-pagebreak?>
@@ -119,17 +119,17 @@ ipv6-test.com
 
 <section><title>ping6 and dns</title>
 	<para>Below a screenshot of a <command>ping6</command> from behind a 6to4 connection.</para>
-	<mediaobject><imageobject><imagedata fileref="images/ipv6_ping6_dns.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
+	<mediaobject><imageobject><imagedata fileref="../images/ipv6_ping6_dns.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 </section>
 
 <section><title>ipv6 and tcp/http</title>
 	<para>Below a screenshot of a tcp handshake and http connection over ipv6.</para>
-	<mediaobject><imageobject><imagedata fileref="images/tcp_over_ipv6.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
+	<mediaobject><imageobject><imagedata fileref="../images/tcp_over_ipv6.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 </section>
 
 <section><title>ipv6 PTR record</title>
 	<para>As seen in the DNS chapter, ipv6 PTR records are in the ip6.net domain, and have 32 generations of child domains.</para>
-	<mediaobject><imageobject><imagedata fileref="images/ipv6_PTR_record.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
+	<mediaobject><imageobject><imagedata fileref="../images/ipv6_PTR_record.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 </section>
 
 <section><title>6to4 setup on Linux</title>

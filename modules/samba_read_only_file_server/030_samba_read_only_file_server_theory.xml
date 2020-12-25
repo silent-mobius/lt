@@ -108,7 +108,7 @@ Access is denied.
 
 K:\&#062;</screen>
 		<para>Or you can use windows explorer...</para>
-		<mediaobject><imageobject><imagedata fileref="images/sambareadonly.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>			
+		<mediaobject><imageobject><imagedata fileref="../images/sambareadonly.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>			
 	</section>
 </section>
 <section><title>a note on netcat</title>

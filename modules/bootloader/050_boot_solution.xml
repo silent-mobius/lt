@@ -30,6 +30,6 @@ title CentOS (2.6.32-431.el6.x86_64)
 timeout=30</screen>
 	<para>4. Reboot and test the new stanza.</para>
 	<screen>[root@centos65 grub]# reboot</screen>
-	<mediaobject><imageobject><imagedata fileref="images/grub1_centos.png" format="EPS" align="center"></imagedata></imageobject></mediaobject>
+	<mediaobject><imageobject><imagedata fileref="../images/grub1_centos.png" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 	<para>Select your stanza and if it boots then you did it correct.</para>
 </section>

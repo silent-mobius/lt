@@ -10,31 +10,38 @@
     <screen>aschapelle@vaio3:~/git_practice$ touch REAMDE.md TODO.md</screen>
 
     <para>4.Write in <command>REAMDE.md</command> file description of the project and what you think it might be.</para>
-    <screen>aschapelle@vaio3:~/git_practice$ echo "This is readme file for git_practice project" > README.md;
-            aschapelle@vaio3:~/git_practice$echo "This is todo file for git_practice project" > TODO.md
+    <screen>aschapelle@vaio3:~/git_practice$ echo "This is readme file for git_practice project" \
+> README.md;
+aschapelle@vaio3:~/git_practice$echo "This is todo file for git_practice project" \
+> TODO.md
     </screen>
 
     <para>5.Initialize your project with <command>git</command> command, setup your username, mail and remote server.</para>
     <screen>aschapelle@vaio3:~/git_practice$ git init 
-        aschapelle@vaio3:~/git_practice$ git config user.name alex.schapelle
-        aschapelle@vaio3:~/git_practice$ git config user.mail alex@vaiolabs.com
-        aschapelle@vaio3:~/git_practice$ git remote add origin https://gitlab.com/url_to_your_project.git
+aschapelle@vaio3:~/git_practice$ git config user.name alex.schapelle
+aschapelle@vaio3:~/git_practice$ git config user.mail alex@vaiolabs.com
+aschapelle@vaio3:~/git_practice$ \
+git remote add origin https://gitlab.com/url_to_your_project.git
     </screen>
 
     <para>6.Use <command>git push -u origin master </command> to send project saves to remote host.</para>
     <screen>
-        aschapelle@vaio3:~/git_practice$ git push -u origin master
+aschapelle@vaio3:~/git_practice$ git push -u origin master
     </screen>
 
-    <para>7.Verify on <command>gitlab.com</command> that the project has been setup and is updated with <command>REAMDE.md</command> and <command>TODO.md</command>.</para>
-    <screen></screen>
+    <para>7.Verify on <command>gitlab.com</command> that the project has been setup and is updated with <command>REAMDE.md</command> 
+    and <command>TODO.md</command>.</para>
+    <screen>
+    
+    </screen>
 
     <para>8.Add git_hello.sh script that prints hello to username from its current location.</para>
-    <screen>aschapelle@vaio3:~/git_practice$ git push -u origin master
+    <screen>
+aschapelle@vaio3:~/git_practice$ git push -u origin master
     </screen>
 
     <para>9.Push the script to gitlab repository.</para>
     <screen>
-        aschapelle@vaio3:~/git_practice$ git push -u origin master
+aschapelle@vaio3:~/git_practice$ git push -u origin master
     </screen>
 </section>

@@ -40,7 +40,7 @@ iptables: Applying firewall rules                              [ ok ]
 </section>
 <section><title>filter table</title>
 	<para>The filter table in <command>iptables</command> has three chains (sets of rules). The INPUT chain is used for any packet coming into the system. The OUTPUT chain is for any packet leaving the system. And the FORWARD chain is for packets that are forwarded (routed) through the system.</para>
-	<para><mediaobject><imageobject><imagedata fileref="images/iptables_filter.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/iptables_filter.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 	<para>The screenshot below shows how to list the filter table and all its rules.</para>
 	<screen>[root@RHEL5 ~]# iptables -t filter -nL
 Chain INPUT (policy ACCEPT)

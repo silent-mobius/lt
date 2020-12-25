@@ -270,7 +270,7 @@ root@barry:~#</screen>
 </section>
 <section><title>bum</title>
 	<para>This screenshot shows <command>bum</command><indexterm><primary>bum(8)</primary></indexterm> in advanced mode.</para>
-	<mediaobject><imageobject><imagedata fileref="images/bum.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
+	<mediaobject><imageobject><imagedata fileref="../images/bum.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 </section>
 <?hard-pagebreak?>
 <section><title>runlevels</title>

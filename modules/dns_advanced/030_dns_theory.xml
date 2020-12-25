@@ -28,7 +28,7 @@ Address: 10.104.33.31</screen>
 <?hard-pagebreak?>
 <section><title>DNS delegation</title>
 	<para>You can <command>delegate</command> a child domain to another DNS server. The child domain then becomes a new zone, with authority at the new dns server.</para>
-	<mediaobject><imageobject><imagedata fileref="images/dns_08_delegation.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
+	<mediaobject><imageobject><imagedata fileref="../images/dns_08_delegation.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 	<para>When <command>delegation</command> is properly set up, then clients that query your parent zone will also be able to resolve the delegated child zones.</para>
 </section>
 <?hard-pagebreak?>

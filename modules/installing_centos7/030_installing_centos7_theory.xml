@@ -55,33 +55,33 @@
 <para><mediaobject><imageobject><imagedata fileref="../images/c_install_summary.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 <?hard-pagebreak?>
 <para>Start by configuring the network. During this demonstration I had a DHCP server running at 192.168.1.42, yours is probably different. Ask someone (a network administator ?) for help if this step fails.</para>
-<para><mediaobject><imageobject><imagedata fileref="images/d_install_network.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+<para><mediaobject><imageobject><imagedata fileref="../images/d_install_network.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 <para>Select your time zone, and activate <command>ntp</command>.</para>
-<para><mediaobject><imageobject><imagedata fileref="images/e_install_time.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+<para><mediaobject><imageobject><imagedata fileref="../images/e_install_time.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 <?hard-pagebreak?>
 <para>Choose a mirror that is close to you. If you can't find a local mirror, then you can copy the one from this screenshot (it is a general <command>CentOS</command> mirror).</para>
-<para><mediaobject><imageobject><imagedata fileref="images/f_install_mirror.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+<para><mediaobject><imageobject><imagedata fileref="../images/f_install_mirror.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 <para>It can take a couple of seconds before the mirror is verified.</para>
-<para><mediaobject><imageobject><imagedata fileref="images/g_install_mirrorok.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+<para><mediaobject><imageobject><imagedata fileref="../images/g_install_mirrorok.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 <?hard-pagebreak?>
 <para>I did not select any software here (because I want to show it all in this training).</para>
 <para><mediaobject><imageobject><imagedata fileref="../images/h_install_nosoftsel.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 <para>After configuring network, location, software and all, you should be back on this page. Make sure there are no warnings anymore (and that you made the correct choice everywhere).</para>
-<para><mediaobject><imageobject><imagedata fileref="images/i_install_go.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+<para><mediaobject><imageobject><imagedata fileref="../images/i_install_go.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 <?hard-pagebreak?>
 <para>You can enter a <command>root password</command> and create a <command>user account</command> while the installation is downloading from the internet. This is the longest step, it can take several minutes (or up to an hour if you have a slow internet connection).</para>
-<para><mediaobject><imageobject><imagedata fileref="images/j_install_users.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+<para><mediaobject><imageobject><imagedata fileref="../images/j_install_users.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 <para>If you see this, then the installation was successful.</para>
 <para>Time to reboot the computer and start <command>CentOS 7</command> for the first time.</para>
-<para><mediaobject><imageobject><imagedata fileref="images/k_install_done.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+<para><mediaobject><imageobject><imagedata fileref="../images/k_install_done.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 <?hard-pagebreak?>
 <para>This screen will appear briefly when the virtual machines starts. You don't have to do anything.</para>
-<para><mediaobject><imageobject><imagedata fileref="images/l_install_reboot.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+<para><mediaobject><imageobject><imagedata fileref="../images/l_install_reboot.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 <para>After a couple of seconds, you should see a logon screen. This is called a <command>tty</command> or a <command>getty</command>. Here you can type <command>root</command> as username. The <command>login process</command> will then ask your password (nothing will appear on screen when you type your password).</para>
-<para><mediaobject><imageobject><imagedata fileref="images/m_install_getty.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+<para><mediaobject><imageobject><imagedata fileref="../images/m_install_getty.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 <?hard-pagebreak?>
 <para>And this is what it looks like after logon. You are logged on to your own Linux machine, very good.</para>
-<para><mediaobject><imageobject><imagedata fileref="images/n_install_gettylogon.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+<para><mediaobject><imageobject><imagedata fileref="../images/n_install_gettylogon.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 <para>All subsequent screenshots will be text only, no images anymore.</para>
 <para>For example this screenshot shows three commands being typed on my new CentOS 7 install.</para>
 <screen>[root@localhost ~]# <command>who am i</command>
@@ -103,7 +103,7 @@ Sat Nov  1 22:10:04 CET 2014
 <?hard-pagebreak?>
 <section><title>CentOS 7 first logon</title>
 <para>All you have to log on, after finishing the installation, is this screen in Virtualbox.</para>
-<para><mediaobject><imageobject><imagedata fileref="images/m_install_getty.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+<para><mediaobject><imageobject><imagedata fileref="../images/m_install_getty.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 <para>This is workable to learn Linux, and you will be able to practice a lot. But there are more ways to access your virtual machine, the next chapters discuss some of these and will also introduce some basic system configuration.</para>
 <section><title>setting the hostname</title>
 <para>Setting the hostname is a simple as changing the <command>/etc/hostname</command> file. As you can see here, it is set to <command>localhost.localdomain</command> by default.</para>
@@ -140,7 +140,7 @@ tate UP qlen 1000
     inet6 fe80::a00:27ff:fe1c:f5ab/64 scope link
        valid_lft forever preferred_lft forever</screen>
 <para>You can change this to <command>bridge</command> (over your wi-fi or over the ethernet cable) and thus make it appear as if your virtual machine is directly on your local network (receiving an ip address from your real dhcp server).</para>
-<para><mediaobject><imageobject><imagedata fileref="images/o_install_natbridge.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+<para><mediaobject><imageobject><imagedata fileref="../images/o_install_natbridge.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 <para>You can make this change while the vm is running, provided that you execute this command:</para>
 <screen>[root@server33 ~]# <command>systemctl restart network</command>
 [root@server33 ~]# <command>ip a s dev enp0s3</command>
@@ -221,10 +221,10 @@ server33.netsec.local
 <section><title>logon from MS Windows</title>
 <para>There is no <command>ssh</command> installed on MS Windows, but you can download <command>putty.exe</command> from <command>http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</command> (just Google it).</para>
 <para>Use <command>putty.exe</command> as shown in this screenshot (I saved the ip address by giving it a name 'server33' and presing the 'save' button).</para>
-<para><mediaobject><imageobject><imagedata fileref="images/putty1.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+<para><mediaobject><imageobject><imagedata fileref="../images/putty1.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 <?hard-pagebreak?>
 <para>The first time you will get a message about keys, accept this (this is explained in the ssh chapter).</para>
-<para><mediaobject><imageobject><imagedata fileref="images/putty2_key.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+<para><mediaobject><imageobject><imagedata fileref="../images/putty2_key.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 <para>Enter your userid (or root) and the correct password (nothing will appear on the screen when typing a password).</para>
-<para><mediaobject><imageobject><imagedata fileref="images/putty3_ok.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+<para><mediaobject><imageobject><imagedata fileref="../images/putty3_ok.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 </section>

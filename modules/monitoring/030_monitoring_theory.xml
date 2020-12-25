@@ -199,9 +199,9 @@ Outgoing:
 <?hard-pagebreak?>
 	<section><title>nmon</title>
 	<para>Another popular and all round tool is <command>nmon</command>.</para>
-	<para><mediaobject><imageobject><imagedata fileref="images/nmon.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/nmon.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 </section>
 	<section><title>htop</title>
 	<para>You can use <command>htop</command> instead of top.</para>
-	<para><mediaobject><imageobject><imagedata fileref="images/htop.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/htop.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 	</section>

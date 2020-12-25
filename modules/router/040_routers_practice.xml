@@ -1,9 +1,9 @@
 <?hard-pagebreak?>
 <section><title>practice: packet forwarding</title>
 	<para>0. You have the option to select (or create) an internal network when adding a network card in <command>VirtualBox</command><indexterm><primary>virtualbox</primary></indexterm> or <command>VMWare</command><indexterm><primary>vmware</primary></indexterm>. Use this option to create two internal networks. I named them <command>leftnet</command> and <command>rightnet</command>, but you can choose any other name.</para>
-	<para><mediaobject><imageobject><imagedata fileref="images/LAN_networks.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/LAN_networks.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 	<para>1. Set up two Linux machines, one on <command>leftnet</command>, the other on <command>rightnet</command>. Make sure they both get an ip-address in the correct subnet. These two machines will be 'left' and 'right' from the 'router'.</para>
-	<para><mediaobject><imageobject><imagedata fileref="images/leftnet_rightnet_router2.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/leftnet_rightnet_router2.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 	<para>2. Set up a third Linux computer with three network cards, one on <command>leftnet</command>, the other on <command>rightnet</command>. This computer will be the 'router'. Complete the table below with the relevant names, ip-addresses and <command>mac-addresses</command><indexterm><primary>mac address</primary></indexterm>.</para>
 <table frame='all'><title>Packet Forwarding Exercise</title>
 <?dbfo table-width="100%" ?>
@@ -46,5 +46,5 @@
 	<para>6. Remember the third network card on the router ? Connect this card to a LAN with internet connection. On many LAN's the command <command>dhclient eth0</command><indexterm><primary>dhclient</primary></indexterm> just works (replace <command>eth0</command> with the correct interface).</para>
 	<screen>root@router~# dhclient eth0</screen>
 	<para>You now have a setup similar to this picture. What needs to be done to give internet access to <command>leftnet</command> and <command>rightnet</command>.</para>
-	<para><mediaobject><imageobject><imagedata fileref="images/leftnet_rightnet_router3.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/leftnet_rightnet_router3.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 </section>

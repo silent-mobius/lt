@@ -2,12 +2,12 @@
 <section><title>introduction to lvm</title>
 	<section><title>problems with standard partitions</title>
 	<para>There are some problems when working with hard disks and standard partitions. Consider a system with a small and a large hard disk device, partitioned like this. The first disk (/dev/sda) is partitioned in two, the second disk (/dev/sdb) has two partitions and some empty space.</para>
-	<para><mediaobject><imageobject><imagedata fileref="images/lvm_classic_partitions.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/lvm_classic_partitions.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 	<para>In the example above, consider the options when you want to enlarge the space available for <command>/srv/project42</command>. What can you do ? The solution will always force you to unmount the file system, take a backup of the data, remove and recreate partitions, and then restore the data and remount the file system.</para>
 	</section>
 	<section><title>solution with lvm</title>
 	<para>Using <command>lvm</command> will create a virtual layer between the mounted file systems and the hardware devices. This virtual layer will allow for an administrator to enlarge a mounted file system in use. When <command>lvm</command> is properly used, then there is no need to unmount the file system to enlarge it.</para>
-	<para><mediaobject><imageobject><imagedata fileref="images/lvm_volume_group.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/lvm_volume_group.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 	</section>
 </section>
 <?hard-pagebreak?>

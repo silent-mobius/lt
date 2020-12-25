@@ -1,0 +1,112 @@
++++ dirname ./main.sh
+++ cd .
+++ pwd
++ dot=/home/aschapelle/Projects/lt
++ sleep 5
++ . /home/aschapelle/Projects/lt/lib/vars.sh
+++++ dirname ./main.sh
++++ cd .
++++ pwd
+++ dot=/home/aschapelle/Projects/lt
+++ OUTPUTDIR=./home/aschapelle/Projects/lt/../output
+++ redirfile=./home/aschapelle/Projects/lt/../output/debug.txt
+++ HTMLDIR=./home/aschapelle/Projects/lt/../output/html
+++ HTMLIMGDIR=./home/aschapelle/Projects/lt/../output/html/images
+++ IMAGESDIR=/home/aschapelle/Projects/lt/images
+++ MODULESDIR=/home/aschapelle/Projects/lt/modules
+++ BUILDDIR=/home/aschapelle/Projects/lt/../
+++ LIBDIR=/home/aschapelle/Projects/lt/..//lib
+++ export 'FOP_OPTS=-Xms512m -Xmx512m'
+++ FOP_OPTS='-Xms512m -Xmx512m'
+++ export BOOKSDIR=/home/aschapelle/Projects/lt/../books
+++ BOOKSDIR=/home/aschapelle/Projects/lt/../books
+++ HTMLXSL=/home/aschapelle/Projects/lt/..//lib/html.xsl
+++ HTMLCSS=/home/aschapelle/Projects/lt/..//lib/html.css
+++ BUNDLE_APPENDICES=1
+++ V=
+++ CHAPTERS=
+++ APPENDICES=
++++ sed 's/^0//'
++++ date +%y%m%d
+++ DATECODE=201214
++++ date +%Y-%m-%d
+++ PUBDATE=2020-12-14
++++ date +%Y
+++ YEAR=2020
++ . /home/aschapelle/Projects/lt/lib/setup.sh
+++++ dirname ./main.sh
++++ cd .
++++ pwd
+++ dot=/home/aschapelle/Projects/lt
+++ . /home/aschapelle/Projects/lt/lib/vars.sh
++++++ dirname ./main.sh
+++++ cd .
+++++ pwd
++++ dot=/home/aschapelle/Projects/lt
++++ OUTPUTDIR=./home/aschapelle/Projects/lt/../output
++++ redirfile=./home/aschapelle/Projects/lt/../output/debug.txt
++++ HTMLDIR=./home/aschapelle/Projects/lt/../output/html
++++ HTMLIMGDIR=./home/aschapelle/Projects/lt/../output/html/images
++++ IMAGESDIR=/home/aschapelle/Projects/lt/images
++++ MODULESDIR=/home/aschapelle/Projects/lt/modules
++++ BUILDDIR=/home/aschapelle/Projects/lt/../
++++ LIBDIR=/home/aschapelle/Projects/lt/..//lib
++++ export 'FOP_OPTS=-Xms512m -Xmx512m'
++++ FOP_OPTS='-Xms512m -Xmx512m'
++++ export BOOKSDIR=/home/aschapelle/Projects/lt/../books
++++ BOOKSDIR=/home/aschapelle/Projects/lt/../books
++++ HTMLXSL=/home/aschapelle/Projects/lt/..//lib/html.xsl
++++ HTMLCSS=/home/aschapelle/Projects/lt/..//lib/html.css
++++ BUNDLE_APPENDICES=1
++++ V=
++++ CHAPTERS=
++++ APPENDICES=
+++++ date +%y%m%d
+++++ sed 's/^0//'
++++ DATECODE=201214
+++++ date +%Y-%m-%d
++++ PUBDATE=2020-12-14
+++++ date +%Y
++++ YEAR=2020
+++ . /home/aschapelle/Projects/lt/lib/build.sh
++++++ dirname ./main.sh
+++++ cd .
+++++ pwd
++++ dot=/home/aschapelle/Projects/lt
+++ . /home/aschapelle/Projects/lt/lib/dep.sh
++++++ dirname ./main.sh
+++++ cd .
+++++ pwd
++++ dot=/home/aschapelle/Projects/lt
++++ line='#################################'
++++ dep_list=(xmlto fop default-jdk default-jdk-headless)
++++ installer=-d
++ . /home/aschapelle/Projects/lt/lib/build.sh
+++++ dirname ./main.sh
++++ cd .
++++ pwd
+++ dot=/home/aschapelle/Projects/lt
++ . /home/aschapelle/Projects/lt/lib/dep.sh
+++++ dirname ./main.sh
++++ cd .
++++ pwd
+++ dot=/home/aschapelle/Projects/lt
+++ line='#################################'
+++ dep_list=(xmlto fop default-jdk default-jdk-headless)
+++ installer=-d
++ echo 'import successfull'
+import successfull
++ sleep 5
++ main
++ getopts 'd: h' option
++ command=
++ book=
++ case $OPTDEBUG in
++ REDIR='2>./home/aschapelle/Projects/lt/../output/debug.txt'
++ check_ROOTDIR
++ '[' -d /home/aschapelle/Projects/lt/../books -a -d /home/aschapelle/Projects/lt/modules -a -d /home/aschapelle/Projects/lt/../ ']'
++ echor 'Please run this script from the book root directory.'
++ echo Please run this script from the book root directory.
+Please run this script from the book root directory.
++ return 1
++ exit 1

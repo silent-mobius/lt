@@ -2,6 +2,6 @@
 <para> </para>
 <para>Many thanks go to <command>Ywein Van den Brande</command> for writing most of this chapter.</para>
 <para>Ywein is an attorney at law, co-author of <command>The International FOSS Law Book</command> and author of <command>Praktijkboek Informaticarecht</command> (in Dutch).</para>
-<mediaobject><imageobject><imagedata fileref="images/ifosslawbook.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
+<mediaobject><imageobject><imagedata fileref="../images/ifosslawbook.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>
 <screen>http://ifosslawbook.org
 http://www.crealaw.eu</screen> 

@@ -1,5 +1,5 @@
 <para>In this chapter, we are going to be introduced to <command>git</command> command line tool. <command>Git</command> is a distributed version-control 
-system for tracking changes in any set of files, originally designed for coordinating work among programmers cooperating on source code during software development.
+system for tracking changes in any set of files, originally designed for coordinating work among software/hardware developers cooperating on source code during software development cycle.
  Its goals include speed, data integrity, and support for distributed, non-linear workflows. Git uses remote server or remote hosted repository to save and keep up
  with the changes of the software developement.
 The <command>git repository</command> which wewill be using will be hosted by <command>gitlab</command>, but you are free to choose another git service provider( github, bitbucket, gitea)

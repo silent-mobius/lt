@@ -1,8 +1,8 @@
 <?hard-pagebreak?>
 <section><title>solution: packet forwarding</title>
-	<para><mediaobject><imageobject><imagedata fileref="images/LAN_networks.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/LAN_networks.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 	<para>1. Set up two Linux machines, one on <command>leftnet</command>, the other on <command>rightnet</command>. Make sure they both get an ip-address in the correct subnet. These two machines will be 'left' and 'right' from the 'router'.</para>
-	<para><mediaobject><imageobject><imagedata fileref="images/leftnet_rightnet_router2.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/leftnet_rightnet_router2.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 	<para>The ip configuration on your computers should be similar to the following two screenshots. Both machines must be in a different subnet (here 192.168.60.0/24 and 192.168.70.0/24). I created a little script on both machines to configure the interfaces.</para>
 	<screen>root@left~# cat leftnet.sh
 pkill dhclient
@@ -63,7 +63,7 @@ net.ipv4.ip_forward = 0</screen>
 	<para>6. Remember the third network card on the router ? Connect this card to a LAN with internet connection. On many LAN's the command <command>dhclient eth0</command> just works (replace <command>eth0</command> with the correct interface.</para>
 	<screen>root@router~# dhclient eth0</screen>
 	<para>You now have a setup similar to this picture. What needs to be done to give internet access to <command>leftnet</command> and <command>rightnet</command>.</para>
-	<para><mediaobject><imageobject><imagedata fileref="images/leftnet_rightnet_router3.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
+	<para><mediaobject><imageobject><imagedata fileref="../images/leftnet_rightnet_router3.png" format="EPS" align="center"></imagedata></imageobject></mediaobject></para>
 	<para>The clients on <command>leftnet</command> and <command>rightnet</command> need a working <command>dns server</command>. We use one of Google's dns servers here.</para> 
 	<screen>echo nameserver 8.8.8.8 > /etc/resolv.conf</screen>
 </section>

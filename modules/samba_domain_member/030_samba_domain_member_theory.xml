@@ -67,7 +67,7 @@ Password:
 Joined domain STARGATE.
 	</screen>
 	<para>We can verify in the aduc (Active Directory Users and Computers) that a computer account is created for this samba server.</para>
-	<mediaobject><imageobject><imagedata fileref="images/sambacomputeraccount.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>			
+	<mediaobject><imageobject><imagedata fileref="../images/sambacomputeraccount.jpg" format="EPS" align="center"></imagedata></imageobject></mediaobject>			
 </section>
 <section><title>winbind</title>
 	<section><title>adding winbind to nsswitch.conf</title>

@@ -38,7 +38,7 @@
 
 }
 
-@test "Test: " {
+@test "Test: check_rootdir" {
 
 }
 

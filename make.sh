@@ -3,7 +3,7 @@
 #created by: Serge
 #edited by: Alex M. Schapelle
 #purpose: build pdf or html files for linux-training learning material
-#version; v1.9.23
+#version; v1.9.34
 #####################################################
 
 
@@ -23,7 +23,7 @@ OUTPUTDIR="./output"
 redirfile="$OUTPUTDIR/debug.txt"
 HTMLDIR="$OUTPUTDIR/html"
 HTMLIMGDIR="$HTMLDIR/images"
-IMAGESDIR="./images" 
+IMAGESDIR="./images"
 MODULESDIR="./modules"
 BUILDDIR="."
 LIBDIR="$BUILDDIR/lib"
@@ -53,7 +53,7 @@ YEAR=$(date +%Y)
 help() {
 	clear
 	deco "Linux-Training book build script:  http://linux-training.be
-	$0 [OPTION] command [book] 
+	$0 [OPTION] command [book]
 	 Options
 	  -d 0,1,2,3,4		Set debug level, 1 is default
 						0	No output
@@ -62,41 +62,41 @@ help() {
 						3	Extra verbose output
 						4	Debug output
 	  -h			Help
-	
+
 	 Commands
 	  clean			clean output dir
 	  build [BOOK]		build book
 	  html [BOOK]		generate html
 	"
-	 deco "Available books: ${superbooks[*]}"     
+	 deco "Available books: ${superbooks[*]}"
 	 deco "Minibooks: ${minibooks[*]}"
-	
+
 	}
 
 set_xsl() {
 	if	[[ -r $BOOKSDIR/$book/lt.xsl ]];then
 		XSLFILE="$BOOKSDIR/$book/lt.xsl"
-	else	
+	else
 		XSLFILE="$LIBDIR/lt.xsl"
 	fi
 }
 
-set_JAVA() {
+set_java() {
 	# Debian / ubuntu specific
 	if [[ -x "$(which java)" ]];then
 	    JAVA_ALTERNATIVE=$(readlink /etc/alternatives/java)
 		export JAVA_HOME=${JAVA_ALTERNATIVE%/bin/java}
-	else    
+	else
 		echo "[!] Could not set JAVA_HOME, something unexpected happened in $0"
 		exit 1
 	fi
 	}
 
-check_ROOTDIR() {
+check_rootdir() {
 
 	if	[[ -d $BOOKSDIR ]] && [[ -d $MODULESDIR ]] && [[ -d $BUILDDIR ]];then
 		echor "[!] Current dir is book project root directory."
-	else	
+	else
 		echor "[!] Please run this script from the book root directory."
 		return 1
 	fi
@@ -129,7 +129,7 @@ echor() {	# echo error
 
 echod() {	# echo debug
 	sleep 0.1
-	[[ $OPTDEBUG -ge 2 ]] && echo $* 
+	[[ $OPTDEBUG -ge 2 ]] && echo $*
 	}
 
 clean() {
@@ -148,7 +148,7 @@ check_book() {
 	if [[ ! -z $book ]];then 	# check if $book parameter is one of the available books
 			echo -e "[?] Checking if $book.cfg exists in ./books directory ... "
 			check=0
-			for entry in ${books[@]} 
+			for entry in ${books[@]}
 				do
 					if [[ $entry == ${book[@]} ]];then
 						check=1
@@ -179,7 +179,7 @@ build_header() {
 		"$BOOKSDIR/$book/reviewers" \
 		"$PUBDATE" \
 		"$YEAR" \
-		"$TEACHER"			                            		>> $headerfile	 
+		"$TEACHER"			                            		>> $headerfile
         echo "</bookinfo>"                                      >> $headerfile
 	}
 
@@ -198,11 +198,11 @@ build_part_body() {
             modfile=$OUTPUTDIR/mod_$mod.xml
 
             # enumerate module files for this module $mod
-	    if [[ -d modules/$mod ]];then	
+	    if [[ -d modules/$mod ]];then
 			MODULES=$(ls modules/${mod}/*)
- 	    else	
-		 	echo "[!] Error: module $mod does not exist!" 
-			echor "[!!!] Fatal error occurred!"
+ 	    else
+		 	echo "[!] Error: module $mod does not exist!"
+			echor "[!!!] Fatal error occurred! [!!!]"
 			exit 1
 	    fi
             echo $MODULES
@@ -288,7 +288,7 @@ build_body() {
     else    # build minibooks
             HAZ_MINIBOOKS=1
             for minibook in $MINIBOOKS
-            	do  
+            	do
 					echod "[+] Assembling the part for minibook $minibook"
 					build_part $minibook
                 	fill_part $partfile
@@ -306,9 +306,9 @@ build_body() {
             		cat $partfile   >>$bodyfile
 	    else	# add custom part as extra part
 			# set booktitle for custompart
-			if [[ $(echo $CHAPTERS $APPENDICES | wc -w ) -gt 1 ]];then	
+			if [[ $(echo $CHAPTERS $APPENDICES | wc -w ) -gt 1 ]];then
 					BOOKTITLE="Appendices"
-			else	
+			else
 					BOOKTITLE="Appendix"
 			fi
 			echod "[+] Adding the custom part at the end."
@@ -324,14 +324,14 @@ build_xml() {
 	. $BOOKSDIR/$book/config
 	. $BOOKSDIR/$book/version
 
-	echod "This book contains:"
-	echod "MINIBOOKS = $MINIBOOKS"
-	echod "CHAPTERS = $CHAPTERS"
-	echod "APPENDICES = $APPENDICES"
+	echod "[*] This book contains:"
+	echod "[*] MINIBOOKS = $MINIBOOKS"
+	echod "[*] CHAPTERS = $CHAPTERS"
+	echod "[*] APPENDICES = $APPENDICES"
 
 	VERSIONSTRING=lt-$MAJOR.$MINOR
 
-	echo "generating book $book (titled \"$BOOKTITLE\")"
+	echo "[*] Generating book $book (titled \"$BOOKTITLE\")"
 	[[ -d $OUTPUTDIR ]] || mkdir $OUTPUTDIR
 
 	BOOKTITLE2=$(echo $BOOKTITLE | sed -e 's/\ /\_/g' -e 's@/@-@g' )
@@ -363,14 +363,14 @@ build_xml() {
 
 build_pdf() {
 	set_xsl
-	set_JAVA
-	echo 
+	set_java
+	echo
 	echo "---------------------------------"
-	echo "Generating $pdffile"
-	tail -n +2 $xmlfile > $tmp_xmlfile
-	eval $(echo fop -xml $tmp_xmlfile -xsl $XSLFILE -pdf $pdffile ) >&2
+	echo "[*] Generating $pdffile"
+		tail -n +2 $xmlfile > $tmp_xmlfile
+			eval $(echo fop -xml $tmp_xmlfile -xsl $XSLFILE -pdf $pdffile ) >&2
 	#eval $(echo fop -xml $tmp_xmlfile -xsl $XSLFILE -pdf $pdffile $EXECDEBUG) >&2 #there is an issue with EXECDEBUG param
-	#fop -xml $tmp_xmlfile -xsl $XSLFILE -pdf $pdffile 
+	#fop -xml $tmp_xmlfile -xsl $XSLFILE -pdf $pdffile
 	ln -s $V $filename.xml $OUTPUTDIR/book.pdf
 	echo "---------------------------------"
 	}
@@ -389,14 +389,14 @@ build_html() {
     # Copy all the used images
     for img in $images
     do
-         echo Copying $img to $HTMLIMGDIR ...
-         cp $V "$IMAGESDIR/$img" $HTMLIMGDIR/ || echor Error copying $img 
+         echo "[*] Copying $img to $HTMLIMGDIR ..."
+         cp $V "$IMAGESDIR/$img" $HTMLIMGDIR/ || echor Error copying $img
     done
 
     # Copy css file to html directory
     cp $HTMLCSS $HTMLDIR
     # Run xmlto in $HTMLDIR to generate the html
-    echo "Converting xml to html ..."
+    echo "[*] Converting xml to html ..."
     ( cd $HTMLDIR && xmlto html *.xml --skip-validation -m ../../$HTMLXSL 2>&1 | grep -v "Writing" ) || ( echor  Error generating the html $HTMLDIR ; exit 1 )
 
     # don't need the xml anymore in the $HTMLDIR
@@ -405,25 +405,25 @@ build_html() {
 }
 
 deco(){
-	
+
     printf "$L\n# %s\n$L\n" "$@"
     sleep 0.5
 }
 
 
 try_fix(){
-	echod "Trying to install dependencies"
+	echod "[!] Trying to install dependencies"
 	sudo $INSTALLER install -y ${tool[@]}
 }
 
 
 check_os_type(){
    local _os=$(cat /etc/*-release|grep '^ID='|awk -F= '{print$2}')
-    if [[ "${_os,,}" == 'debian' ]] || [[ "${_os,,}" == 'ubuntu' ]] || [[ "${_os,,}" == 'linuxmint' ]];then 
+    if [[ "${_os,,}" == 'debian' ]] || [[ "${_os,,}" == 'ubuntu' ]] || [[ "${_os,,}" == 'linuxmint' ]];then
         true
-    else  
-        deco "!!!!  OS not Supported  !!!!"
-        exit 1 
+    else
+        deco "[!!!!]  OS not Supported  [!!!!]"
+        exit 1
     fi
 }
 
@@ -469,7 +469,7 @@ esac
 
 ##############
 
-check_ROOTDIR || exit 1
+check_rootdir || exit 1
 
 books=($( cd $BOOKSDIR ; find * -maxdepth 1 -type d))
 superbooks=($( cd $BOOKSDIR ; find * -maxdepth 1 -type d | grep -v minibook ))
@@ -483,31 +483,32 @@ mkdir -p $OUTPUTDIR
 # Main loop
 case "$cmd" in
   clean)
-	clean
+		clean
 	;;
   build)
-	check_os_type
-	clean
-	[[ -x "$(which fop)" ]] || echor "fop not installed." || exit 1
-	check_book
-	deco "Building '$book' book."
-	build_xml
-	deco "Generating pdf for '$book' book."
-	build_pdf
-	deco "Done generating pdf $OUTPUTDIR/book.pdf -> $pdffile" 
+		check_os_type
+			clean
+	[[ -x "$(which fop)" ]] || echor "[!] fop not installed." && try_fix || exit 1
+		check_book
+	deco "[+]Building '$book' book."
+		build_xml
+	deco "[+]Generating pdf for '$book' book."
+		build_pdf
+	deco "[*]Done generating pdf $OUTPUTDIR/book.pdf -> $pdffile"
 	;;
   html)
-	[[ -x "$(which xmlto)" ]] || echor "xmlto not installed."|| exit 1
-	clean 
-	check_book
-	deco "Building '$book' book."
-	build_xml
-	deco "Generating html for '$book' book."
-	build_html
- 	deco "Done Generating html for '$book' book."
+		check_os_type
+			clean
+	[[ -x "$(which xmlto)" ]] || echor "[!] xmlto not installed." && try_fix || exit 1
+			check_book
+	deco "[+] Building '$book' book."
+		build_xml
+	deco "[+] Generating html for '$book' book."
+		build_html
+ 	deco "[+] Done Generating html for '$book' book."
 	;;
   *)
 	help
 	;;
-	
+
 esac

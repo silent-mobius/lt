@@ -371,7 +371,7 @@ build_pdf() {
 			eval $(echo fop -xml $tmp_xmlfile -xsl $XSLFILE -pdf $pdffile ) >&2
 	#eval $(echo fop -xml $tmp_xmlfile -xsl $XSLFILE -pdf $pdffile $EXECDEBUG) >&2 #there is an issue with EXECDEBUG param
 	#fop -xml $tmp_xmlfile -xsl $XSLFILE -pdf $pdffile
-	ln -s $V $filename.xml $OUTPUTDIR/book.pdf
+			ln -s $V $filename.xml $OUTPUTDIR/book.pdf
 	echo "---------------------------------"
 	}
 

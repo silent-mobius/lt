@@ -42,30 +42,49 @@
 
 }
 
-@test "Test: " {
+@test "Test: add_mod" {
 
 }
 
-@test "Test: " {
+@test "Test: clean" {
 
 }
 
-@test "Test: " {
+@test "Test: check_book " {
 
 }
 
-@test "Test: " {
+@test "Test: check_header" {
 
 }
 
-@test "Test: " {
+@test "Test: check_footer " {
 
 }
 
-@test "Test: " {
+@test "Test: build_part_body " {
 
 }
 
-@test "Test: " {
+@test "Test: fill_part" {
+
+}
+
+@test "Test:  build_part" {
+
+}
+@test "Test: build_body " {
+
+}
+@test "Test: build_xml" {
+
+}
+@test "Test: build_pdf" {
+
+}
+@test "Test: build_html" {
+
+}
+@test "Test: check_os_type" {
 
 }

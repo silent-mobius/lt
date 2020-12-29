@@ -7,7 +7,7 @@
 # you're doing.
 $script = <<-SHELL
   echo "installing dependencies"
-  sudo yum -y install fop xmlto
+  sudo apt-get -y install fop xmlto
   sleep 3
   echo "crearing working dir "
   mkdir -p /home/vagrant/project
@@ -15,7 +15,7 @@ $script = <<-SHELL
 SHELL
 
 $build = <<-BUILD
-cd /home/$USER/project
+cd /home/vagrant/project
 bash make.sh -d 0 build complete
 
 BUILD
@@ -23,7 +23,7 @@ BUILD
 Vagrant.configure("2") do |config|
   config.vm.box = "generic/debian10"
   config.vm.provision "shell", inline: $script
-  config.vm.synced_folder "../lt", "/home/vagrant/project"
+  config.vm.synced_folder ".", "/home/vagrant/project"
   config.vm.provision "shell", inline: $build
 
 end

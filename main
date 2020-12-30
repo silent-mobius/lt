@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
+######################################################
+#created by: Serge
+#edited by: Alex M. Schapelle
+#purpose: build pdf or html files for linux-training learning material
+#version; v1.9.35
+#####################################################
 
-. ./lib/vars
-. ./lib/funcs
+. ./lib/build/vars
+. ./lib/build/funcs
 
 
 main(){

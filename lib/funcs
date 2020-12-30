@@ -128,7 +128,8 @@ build_header() {
         echo "<book>"                                           >> $headerfile
         echo "<bookinfo>"                                       >> $headerfile
         echo "<title>$BOOKTITLE</title>"                        >> $headerfile
-	$BUILDDIR/buildheader.pl \
+				#$BUILDDIR/buildheader.pl \
+		./buildheader.pl \	
 		"modules/header/abstract.xml" \
 		"$BOOKSDIR/$book/copyrights" \
 		"$BOOKSDIR/$book/authors" \

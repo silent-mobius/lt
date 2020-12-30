@@ -6,8 +6,8 @@
 #version; v1.9.35
 #####################################################
 
-. ./lib/build/vars
-. ./lib/build/funcs
+. ./lib/vars
+. ./lib/funcs
 
 
 main(){
